@@ -1,0 +1,23 @@
+{
+  "name": "musicplayer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:styles": "node ./node_modules/node-sass/bin/node-sass ./styles/index.scss app.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1evaleen/music-player-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1evaleen/music-player-app/issues"
+  },
+  "homepage": "https://github.com/1evaleen/music-player-app#readme",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
+}

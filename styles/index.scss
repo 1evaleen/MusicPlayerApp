@@ -1,0 +1,320 @@
+$primary-colour: #2e3840;
+$secondry-colour: #6b7082;
+$highlight-colour: #0078E7;
+$shadow-colour: #d3d3d3;
+$background-colour: white;
+$font-stack: roboto;
+$font-weight-title: 500;
+$font-size-h1: 19pt;
+$font-size-h2: 9pt;
+$font-size-h6: 6pt;
+$font-size-p: 9pt;
+%button-style {
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+%image-style {
+    background-size: cover;
+}
+
+.hide {
+    display: none;
+}
+.home {
+    width: 100%;
+    height: 100%;
+}
+.recently-played-header {
+    font-family: $font-stack;
+    font-weight: $font-weight-title;
+    font-size: $font-size-h2;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    line-height: 40px;
+    padding-left: 10px;
+}
+.recently-played-songs {
+    background-color: $background-colour;
+    position: sticky;
+    top: 0px;
+    height: 156px;
+    min-width: 100%;
+    display: flex;
+    overflow-x: auto;
+    padding-top: 8px;
+    
+    &__song-element {
+        min-width: 100px;
+        height: 100%;
+        margin-left: 10px;
+
+        &__img {
+            @extend %image-style;
+            box-shadow: 8px 29px 23px -8px $shadow-colour;
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            border-radius: 25px 10px;
+        }
+
+        &__title {
+            font-family: $font-stack;
+            font-weight: $font-weight-title;
+            color: $primary-colour;
+            font-size: $font-size-h2;
+            margin-bottom: 5px;
+        }
+
+        &__artist {
+            font-family: $font-stack;
+            color: $secondry-colour;
+            font-size: $font-size-h6;
+        }
+    }
+}
+.playlist-header {
+    font-family: $font-stack;
+    font-size: $font-size-h1;
+    font-weight: $font-weight-title;
+    color: $primary-colour;
+    height: 44px;
+    line-height: 44px;
+    padding-left: 8px;
+}
+.playlist {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    min-height: 100%;
+    margin-bottom: 110px;
+
+    &__song__element {
+        width: 46%;
+        margin: 2%;
+
+        &__img {
+            @extend %image-style;
+            box-shadow: 8px 19px 23px -8px $shadow-colour;
+            width: 100%;
+            height: 200px;
+            margin: 10px 0;
+            border-radius: 25px 10px;
+        }
+
+        &__title {
+            font-family: $font-stack;
+            font-size: $font-size-h2;
+            color: $primary-colour;
+            font-weight: $font-weight-title;
+            margin-bottom: 5px;
+        }
+
+        &__artist {
+            font-family: $font-stack;
+            font-size: $font-size-h6;
+            color: $secondry-colour;
+        }
+    }
+}
+.playbar {
+    background-color: $background-colour;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 90px;
+    box-shadow: 0 -10px 20px $shadow-colour;
+    z-index: 300;
+
+    &__img {
+        @extend %image-style;
+        box-shadow: 11px 10px 14px -3px $shadow-colour;
+        position: absolute;
+        left: 16px;
+        top: 12px;
+        width: 50px;
+        height: 50px;
+        border-radius: 15px;    
+    }
+    &__title {
+        font-family: $font-stack;
+        font-size: $font-size-h2;
+        font-weight: $font-weight-title;
+        color: $primary-colour;
+        position: absolute;
+        top: 20px;
+        left: 85px;    
+    }
+    &__artist {
+        font-family: $font-stack;
+        font-size: $font-size-h6;
+        color: $secondry-colour;    
+        position: absolute;
+        left: 85px;
+        top: 43px;
+    }
+    &__play-pause-btn {
+        @extend %button-style;
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        top: 25px;
+        right: 128px;
+    }
+    &__play-next-btn {
+        @extend %button-style;
+        background-image: url(./icons/playNextBtn.svg);
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 30px;
+        right: 90px;
+    }
+    &__shuffle-btn {
+        @extend %button-style;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 32px;
+        right: 55px;    
+    }
+    &__volume-btn {
+        @extend %button-style;
+        background-image: url(./icons/volumeBtn.svg);
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 30px;
+        right: 16px;    
+    }
+    &__song-progress-bar {
+        position: absolute;
+        bottom: 14px;
+        left: 62px;
+        width: calc(100% - 120px);
+        height: 1px;    
+    }
+    &__song-curr-time {
+        position: absolute;
+        left: 31px;
+        bottom: 11px;
+        font-size: $font-size-h6;
+        color: $highlight-colour;    
+    }
+    &__song-total-time {
+        position: absolute;
+        right: 25px;
+        bottom: 11px;
+        font-size: $font-size-h6;
+        color: $highlight-colour;    
+    }
+    &__volume-slider-box {
+        background-color: white;
+        position: absolute;
+        box-shadow: 0 0 4px 2px $shadow-colour;
+        border-radius: 5px;
+        bottom: 115px;
+        right: 9px;
+        height: 146px;
+        width: 39px;
+        z-index: 100;
+
+        &__slider {
+            position: absolute;
+            transform: rotate(-90deg);
+            right: -47px;
+            bottom: 70px;
+            height: 1px;
+            z-index: 200;        
+        }
+    }
+}
+.modal {
+    background-color: $background-colour;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+
+    &__close-btn {
+        @extend %button-style;
+        background-image: url(./icons/closeBtn.svg);
+        position: absolute;
+        top: 40px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        z-index: 300;
+    }
+    &__page-title {
+        font-family: $font-stack;
+        font-size: $font-size-h2;
+        font-weight: $font-weight-title;
+        color: $primary-colour;
+        position: absolute;
+        top: 47px;
+        width: 100%;
+        text-align: center;
+    }
+    &__image-wrapper {
+        position: absolute;
+        top: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 300px;
+
+        &__img {
+            @extend %image-style;
+            box-shadow: 14px 48px 27px 4px lightgrey;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &__play-btn {
+                @extend %button-style;
+                background-image: url(./icons/mPlayBtn.svg);
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+            }
+        }
+    }
+    &__title {
+        font-family: $font-stack;
+        font-size: $font-size-h1;
+        font-weight: $font-weight-title;
+        color: $primary-colour;
+        position: absolute;
+        bottom: 285px;
+        width: 100%;
+        text-align: center;
+    }
+    &__artist {
+        font-family: $font-stack;
+        font-size: $font-size-h2;
+        color: $secondry-colour;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        bottom: 258px;
+    }
+    &__song-details {
+        font-family: $font-stack;
+        font-size: $font-size-p;
+        color: $secondry-colour;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        bottom: 195px;
+    }
+}
