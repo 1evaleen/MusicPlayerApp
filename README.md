@@ -2,7 +2,7 @@
 
 ## Overview
 
-Create your own party playlist with your favourite tunes in one place!
+Create your own playlist with all your favourite tunes in one place!
 
 ## Instructions
 
