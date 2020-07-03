@@ -1,4 +1,5 @@
-import musicData from '../data';
+import musicData from '../data/index';
+import localCache from '../src/utils';
 
 const playlistWrapperEl = document.querySelector('.playlist');
 const playbar = document.querySelector('.playbar');
@@ -109,7 +110,7 @@ function buildPlaylistSongItem (id, title, artist, song, image) {
     return playlistSongEl;
 }
 function renderRecentlyPlayedSongs () {
-    let LsData = getData(LOCALSTORAGE_KEY);
+    let LsData = localCache.getData(LOCALSTORAGE_KEY);
     let playlist = LsData.recentlyPlayedMusicData || [];
     recentlyPlayed.innerHTML = '';
     playlist.forEach(s => {
@@ -278,7 +279,7 @@ function toggleShuffleBtn () {
     }
 }
 function addCurrSongToRecentPlaylist (songId) {
-    let LsData = getData(LOCALSTORAGE_KEY);
+    let LsData = localCache.getData(LOCALSTORAGE_KEY);
     let playlist = LsData.recentlyPlayedMusicData || [];
     musicData.forEach(s => {
         if(s.id === songId) {
@@ -289,5 +290,5 @@ function addCurrSongToRecentPlaylist (songId) {
         playlist.splice(9, 1);
     }
     LsData.recentlyPlayedMusicData = playlist;
-    saveData(LsData, LOCALSTORAGE_KEY);
+    localCache.saveData(LsData, LOCALSTORAGE_KEY);
 }
