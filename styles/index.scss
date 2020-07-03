@@ -16,6 +16,7 @@ $font-size-p: 9pt;
 %image-style {
     background-size: cover;
 }
+$icons-path: '../icons';
 
 .hide {
     display: none;
@@ -162,7 +163,7 @@ $font-size-p: 9pt;
     }
     &__play-next-btn {
         @extend %button-style;
-        background-image: url(./icons/playNextBtn.svg);
+        background-image: url(#{$icons-path}/playNextBtn.svg);
         position: absolute;
         width: 20px;
         height: 20px;
@@ -179,7 +180,7 @@ $font-size-p: 9pt;
     }
     &__volume-btn {
         @extend %button-style;
-        background-image: url(./icons/volumeBtn.svg);
+        background-image: url(#{$icons-path}/volumeBtn.svg);
         position: absolute;
         width: 20px;
         height: 20px;
@@ -239,7 +240,7 @@ $font-size-p: 9pt;
 
     &__close-btn {
         @extend %button-style;
-        background-image: url(./icons/closeBtn.svg);
+        background-image: url(#{$icons-path}/closeBtn.svg);
         position: absolute;
         top: 40px;
         right: 20px;
@@ -278,7 +279,7 @@ $font-size-p: 9pt;
 
             &__play-btn {
                 @extend %button-style;
-                background-image: url(./icons/mPlayBtn.svg);
+                background-image: url(#{$icons-path}/mPlayBtn.svg);
                 width: 70px;
                 height: 70px;
                 border-radius: 50%;

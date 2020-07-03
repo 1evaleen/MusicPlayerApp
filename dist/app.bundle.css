@@ -128,7 +128,7 @@
     top: 25px;
     right: 128px; }
   .playbar__play-next-btn {
-    background-image: url(./icons/playNextBtn.svg);
+    background-image: url(../icons/playNextBtn.svg);
     position: absolute;
     width: 20px;
     height: 20px;
@@ -141,7 +141,7 @@
     top: 32px;
     right: 55px; }
   .playbar__volume-btn {
-    background-image: url(./icons/volumeBtn.svg);
+    background-image: url(../icons/volumeBtn.svg);
     position: absolute;
     width: 20px;
     height: 20px;
@@ -192,7 +192,7 @@
   right: 0;
   z-index: 200; }
   .modal__close-btn {
-    background-image: url(./icons/closeBtn.svg);
+    background-image: url(../icons/closeBtn.svg);
     position: absolute;
     top: 40px;
     right: 20px;
@@ -225,7 +225,7 @@
       align-items: center;
       justify-content: center; }
       .modal__image-wrapper__img__play-btn {
-        background-image: url(./icons/mPlayBtn.svg);
+        background-image: url(../icons/mPlayBtn.svg);
         width: 70px;
         height: 70px;
         border-radius: 50%; }
