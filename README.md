@@ -14,5 +14,8 @@ Create your own playlist with all your favourite tunes in one place!
 
 ## Demo
 
+Watch a demo of the app on YouTube: https://youtu.be/D5361oYLE0c
+
+
 ## Further features to be implemented
 
