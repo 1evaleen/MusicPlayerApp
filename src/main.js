@@ -53,12 +53,14 @@ function openModal (evt) {
     let imgEl = document.querySelector('.modal__image-wrapper__img');
     let titleEl = document.querySelector('.modal__title');
     let artistEl = document.querySelector('.modal__artist');
+    let detailsEl = document.querySelector('.modal__song-details');
     modal.classList.remove('hide');
     musicData.forEach(s => {
         if(s.id === id) {
             imgEl.style.backgroundImage = `url('${s.image}')`;
             titleEl.innerHTML = `${s.title}`;
             artistEl.innerHTML = `${s.artist}`;
+            detailsEl.innerHTML = `${s.details}`;
             modalPlayBtn.dataset.song = `${s.song}`;
             modalPlayBtn.dataset.id = `${s.id}`
         };
