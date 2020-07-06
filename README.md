@@ -21,3 +21,6 @@ Create your own playlist with all your favourite tunes in one place!
 
 ## Further features to be implemented
 
+* reorder playlist with drag and drop
+* open songs from recently played
+* open played song from playbar
