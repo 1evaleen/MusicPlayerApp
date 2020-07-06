@@ -47,6 +47,8 @@ function evtHandlers () {
     volumeBtn.addEventListener('click', showVolumeSlider);
     audio.addEventListener('ended', playNextSong);
     shuffleBtn.addEventListener('click', toggleShuffleBtn);
+    progressBar.addEventListener('change', () => currSong.currentTime = progressBar.value);
+    volumeSlider.addEventListener('change', () => { audio.volume = formatVolumeValues(volumeSlider.value)})
 }
 function openModal (evt) {
     let id = evt.target.parentElement.dataset.id
@@ -241,17 +243,9 @@ function updateSongProgressTime () {
     document.querySelector('.playbar__song-curr-time').innerHTML = formatSongLengthTime(currSong.currentTime);
     document.querySelector('.playbar__song-total-time').innerHTML = formatSongLengthTime(currSong.duration);
 }
-function changeSongProgressBar () {
-    currSong.currentTime = progressBar.value;
-}
 function formatVolumeValues (number) {
     let volume = number/100;
     return volume;
-}
-function changeVolume() {
-    let newVolume = volumeSlider.value;
-    newVolume = formatVolumeValues(newVolume);
-    audio.volume = newVolume;
 }
 function showVolumeSlider () {
     volumeSliderBox.classList.remove('hide');
