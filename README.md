@@ -1,4 +1,4 @@
-# PartyPlaylistApp
+# Music Player App
 
 ## Overview
 
